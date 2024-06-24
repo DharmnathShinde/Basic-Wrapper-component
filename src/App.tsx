@@ -6,10 +6,9 @@ function App() {
 
   return (
     <>
-    <Input id="name" label="something"/> 
-    <Input id="age"  label='your age'/>
+    <Input id="name" label="something" type='sring'/> 
+    <Input id="age"  label='your age' type='number'/>
     </>
   )
 }
-
 export default App
