@@ -1,13 +1,18 @@
-
-import Input from './component/input'
+import Button from './component/Button'
 import './App.css'
+import Container from './component/Container' 
 
 function App() {
 
   return (
     <>
-    <Input id="name" label="something" type='sring'/> 
-    <Input id="age"  label='your age' type='number'/>
+    <p>
+      <Button >A button</Button>
+      <Button >second</Button>
+      <Button  href='https://google.com'>third</Button>
+      <Container as={'button'}>click me</Container>
+    </p>
+    
     </>
   )
 }

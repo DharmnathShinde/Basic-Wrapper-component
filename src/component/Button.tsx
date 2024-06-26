@@ -1,19 +1,20 @@
 import { ComponentPropsWithoutRef } from "react";
-
-type forbutton={
- element:"button";   
-}&ComponentPropsWithoutRef<"button">
-
-type foracnhor={
-    element:"anchor"
-}&ComponentPropsWithoutRef<"a">
-
-export default function Button(props:foracnhor|forbutton){
-  if (props.element=="button"){
-    return <button></button>
+type forbutton = ComponentPropsWithoutRef<"button">&{
+  href?:never
 }
-else
-return <a>
 
-</a>
+type foracnhor = ComponentPropsWithoutRef<"a">&{
+ href?:string
+}
+
+function isAnchorProps(props: foracnhor | forbutton):props is foracnhor{
+  return 'href' in props;
+}
+
+export default function Button(props: foracnhor | forbutton) {
+  // const {element,...otherProps}=props
+  if (isAnchorProps(props)) 
+    {return <a {...props}></a>}
+  else
+  return <button {...props}></button>
 }
