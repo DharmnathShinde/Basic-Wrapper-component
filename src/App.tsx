@@ -1,19 +1,18 @@
-import Button from './component/Button'
+// import Button from './component/Button'
 import './App.css'
-import Container from './component/Container' 
+// import Button from './component/Button'
+// import Container from './component/Container' 
+import { Card } from './component/Card'
 
 function App() {
 
   return (
-    <>
-    <p>
-      <Button >A button</Button>
-      <Button >second</Button>
-      <Button  href='https://google.com'>third</Button>
-      <Container as={'button'}>click me</Container>
-    </p>
-    
-    </>
+    <Card
+    title='something' onClick={()=>{
+      alert("onclied")
+    }}>
+  
+    </Card>
   )
 }
 export default App
